@@ -1,0 +1,22 @@
+The issue can be solved by increasing the specificity of the `.container:hover .inner` selector.  Here's a corrected version using an extra class:
+
+```css
+.container {
+  width: 200px;
+  height: 200px;
+  background-color: lightblue;
+}
+
+.container:hover .inner.hovered {
+  background-color: lightcoral;
+}
+
+.inner {
+  width: 100px;
+  height: 100px;
+  background-color: lightgreen;
+  margin: 50px;
+}
+```
+
+Now, when hovering over `.container`, the `hovered` class is added (using JavaScript or a similar method), giving the `:hover` rule enough specificity to change the `.inner` element's background color.  Alternatively, a more specific selector could be employed, depending on the surrounding HTML structure.
