@@ -1,0 +1,24 @@
+The following CSS code snippet demonstrates an issue with unexpected behavior when using the `:hover` pseudo-class in conjunction with a nested element:
+
+```css
+.container {
+  width: 200px;
+  height: 200px;
+  background-color: lightblue;
+}
+
+.container:hover .inner {
+  background-color: lightcoral;
+}
+
+.inner {
+  width: 100px;
+  height: 100px;
+  background-color: lightgreen;
+  margin: 50px;
+}
+```
+
+The intended effect is that when hovering over the `.container`, the `.inner` element's background color changes to lightcoral. However, this only occurs if the mouse cursor is precisely over the `.inner` element itself, not the `.container` as a whole. This is due to specificity issues where the specificity of `.container:hover .inner` is not high enough compared to `.inner`.
+
+This is an uncommon issue because many developers don't encounter this problem, especially those using simple CSS structures.  However, with more complex nested selectors and specificity, such issues can arise.
